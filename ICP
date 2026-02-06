@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultoría de Crecimiento & Adquisición | Sistemas de Revenue Predecibles</title>
+    <meta name="description" content="Especialistas en escalar empresas B2B y B2C mediante sistemas de adquisición integrando IA, marketing y ventas.">
+    
+    <!-- Fuentes: Inter para un look profesional -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons (CDN para simplicidad) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        :root {
+            --primary: #0f172a;    /* Navy Dark */
+            --accent: #10b981;     /* Growth Green */
+            --accent-hover: #059669;
+            --text-main: #1e293b;
+            --text-light: #64748b;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            line-height: 1.6;
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* Utilidades */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .section-padding {
+            padding: 100px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.3);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        h1, h2, h3 {
+            line-height: 1.2;
+            font-weight: 700;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Navbar */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 180px 0 100px;
+            background: radial-gradient(circle at top right, #f1f5f9 0%, #ffffff 50%);
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            max-width: 900px;
+            margin: 0 auto 1.5rem;
+            letter-spacing: -1.5px;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+        }
+
+        /* Market Problems (Pain) */
+        .problems {
+            background-color: var(--bg-light);
+        }
+
+        .grid-problems {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .problem-card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            border-bottom: 4px solid #e2e8f0;
+            transition: var(--transition);
+        }
+
+        .problem-card:hover {
+            border-bottom-color: #ef4444; /* Rojo para el dolor */
+            transform: translateY(-5px);
+        }
+
+        .problem-card i {
+            color: #ef4444;
+            margin-bottom: 1rem;
+        }
+
+        .problem-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        /* Value Prop */
+        .value-prop {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        .flex-value {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .value-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .value-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .value-image {
+            flex: 1;
+            min-width: 300px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .check-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .check-item i {
+            color: var(--accent);
+            margin-top: 0.2rem;
+        }
+
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            padding: 2.5rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
+            border-color: var(--accent);
+        }
+
+        .service-icon {
+            width: 50px;
+            height: 50px;
+            background: #ecfdf5;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Methodology */
+        .methodology {
+            background: var(--bg-light);
+        }
+
+        .steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .step {
+            flex: 1;
+            min-width: 220px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            border: 5px solid var(--white);
+        }
+
+        /* Industries */
+        .industries-tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .industry-tag {
+            padding: 0.75rem 1.5rem;
+            background: var(--bg-light);
+            border-radius: 50px;
+            font-weight: 500;
+            color: var(--primary);
+            border: 1px solid #e2e8f0;
+        }
+
+        /* Final CTA */
+        .cta-final {
+            background: linear-gradient(135deg, var(--primary) 0%, #1e293b 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 120px 0;
+        }
+
+        .cta-final h2 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Footer */
+        footer {
+            padding: 50px 0;
+            border-top: 1px solid #e2e8f0;
+            text-align: center;
+        }
+
+        .social-links {
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            color: var(--text-light);
+            margin: 0 10px;
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .section-title h2 { font-size: 2rem; }
+            .flex-value { flex-direction: column-reverse; }
+            .steps { flex-direction: column; }
+            .step::after { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="container nav-content">
+            <div class="logo">GROWTH<span>CORP</span></div>
+            <a href="#contacto" class="btn btn-primary" style="padding: 0.6rem 1.2rem; font-size: 0.9rem;">Agenda Diagnóstico</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <h1>Escale su Revenue con Sistemas de Adquisición Predecibles</h1>
+            <p>Ayudamos a empresas B2B y B2C a integrar Marketing, Ventas e Inteligencia Artificial para optimizar el CAC y acelerar el crecimiento rentable.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="#contacto" class="btn btn-primary">Agendar Diagnóstico Estratégico</a>
+                <a href="#servicios" class="btn btn-outline">Ver Metodología</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Problems Section -->
+    <section class="section-padding problems">
+        <div class="container">
+            <div class="section-title">
+                <h2>¿Por qué su crecimiento se ha estancado?</h2>
+                <p>La mayoría de las empresas que facturan entre $500K y $20M comparten los mismos cuellos de botella estructurales.</p>
+            </div>
+            <div class="grid-problems">
+                <div class="problem-card">
+                    <i data-lucide="trending-down" size="32"></i>
+                    <h3>Pipeline Inestable</h3>
+                    <p>Dependencia excesiva de referidos o del esfuerzo manual, sin un flujo constante de nuevas oportunidades.</p>
+                </div>
+                <div class="problem-card">
+                    <i data-lucide="users-round" size="32"></i>
+                    <h3>Leads de Baja Calidad</h3>
+                    <p>Marketing genera volumen, pero Ventas pierde tiempo con prospectos que no tienen presupuesto ni intención.</p>
+                </div>
+                <div class="problem-card">
+                    <i data-lucide="calculator" size="32"></i>
+                    <h3>CAC Descontrolado</h3>
+                    <p>El costo de adquirir un cliente sube cada mes y no existe claridad sobre el retorno de inversión por canal.</p>
+                </div>
+                <div class="problem-card">
+                    <i data-lucide="split" size="32"></i>
+                    <h3>Silos Operativos</h3>
+                    <p>Marketing y Ventas hablan lenguajes diferentes, desconectados de la data real de revenue.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Prop Section -->
+    <section class="section-padding value-prop">
+        <div class="container">
+            <div class="flex-value">
+                <div class="value-content">
+                    <h2>Convertimos el Marketing en una Inversión Medible</h2>
+                    <p style="margin-bottom: 2rem; color: #cbd5e1;">No somos una agencia operativa de anuncios. Somos sus aliados estratégicos en el diseño de la arquitectura de crecimiento de su compañía.</p>
+                    
+                    <div class="check-item">
+                        <i data-lucide="check-circle-2"></i>
+                        <div>
+                            <strong>Enfoque en Revenue, no en "Likes"</strong>
+                            <p style="font-size: 0.9rem; color: #cbd5e1;">Optimizamos cada etapa del funnel basándonos en la rentabilidad final.</p>
+                        </div>
+                    </div>
+                    <div class="check-item">
+                        <i data-lucide="check-circle-2"></i>
+                        <div>
+                            <strong>Integración de Inteligencia Artificial</strong>
+                            <p style="font-size: 0.9rem; color: #cbd5e1;">Automatizamos la prospección y el scoring para multiplicar la capacidad de su equipo.</p>
+                        </div>
+                    </div>
+                    <div class="check-item">
+                        <i data-lucide="check-circle-2"></i>
+                        <div>
+                            <strong>Data-Driven Decision Making</strong>
+                            <p style="font-size: 0.9rem; color: #cbd5e1;">Implementamos modelos de atribución para saber exactamente de dónde viene cada dólar.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="value-image">
+                    <div style="text-align: center;">
+                        <i data-lucide="bar-chart-3" size="64" style="color: var(--accent); margin-bottom: 1rem;"></i>
+                        <h3 style="font-size: 2rem;">+40%</h3>
+                        <p>Eficiencia Promedio en CAC</p>
+                        <hr style="margin: 1.5rem 0; opacity: 0.1;">
+                        <i data-lucide="zap" size="64" style="color: var(--accent); margin-bottom: 1rem;"></i>
+                        <h3 style="font-size: 2rem;">3x</h3>
+                        <p>Velocidad del Pipeline</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicios" class="section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Soluciones de Consultoría Estratégica</h2>
+                <p>Nuestra intervención se centra en construir activos duraderos para su empresa.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i data-lucide="search"></i></div>
+                    <h3>Auditoría de Crecimiento</h3>
+                    <p>Análisis profundo de su funnel actual, tecnología y procesos comerciales para identificar fugas de revenue.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i data-lucide="layers"></i></div>
+                    <h3>Sistemas de Adquisición</h3>
+                    <p>Diseño de la infraestructura de captación (Inbound, Outbound y IA) adaptada a su ciclo de venta.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i data-lucide="target"></i></div>
+                    <h3>Demand Generation</h3>
+                    <p>Estrategias para educar al mercado y posicionar su solución antes de que el cliente hable con ventas.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i data-lucide="cpu"></i></div>
+                    <h3>IA & Automatización</h3>
+                    <p>Implementación de flujos inteligentes para calificar leads 24/7 y reducir tareas manuales en ventas.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i data-lucide="pie-chart"></i></div>
+                    <h3>Optimización de CAC</h3>
+                    <p>Ajuste de la inversión en performance para maximizar el Lifetime Value (LTV) y la rentabilidad.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i data-lucide="line-chart"></i></div>
+                    <h3>Revenue Operations</h3>
+                    <p>Alineación técnica de CRM, data y procesos para una visibilidad total del crecimiento.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Methodology Section -->
+    <section class="section-padding methodology">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestra Metodología</h2>
+                <p>Un proceso estructurado para resultados predecibles.</p>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">01</div>
+                    <h3>Diagnóstico</h3>
+                    <p>Evaluamos datos históricos y procesos actuales.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">02</div>
+                    <h3>Estrategia</h3>
+                    <p>Diseñamos el roadmap de crecimiento y sistemas.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">03</div>
+                    <h3>Implementación</h3>
+                    <p>Desplegamos tecnología y tácticas de adquisición.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">04</div>
+                    <h3>Escalamiento</h3>
+                    <p>Iteramos en base a data para maximizar el revenue.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Industrias donde generamos impacto</h2>
+            </div>
+            <div class="industries-tags">
+                <span class="industry-tag">Tecnología & SaaS</span>
+                <span class="industry-tag">Agroindustria</span>
+                <span class="industry-tag">Distribución & Logística</span>
+                <span class="industry-tag">Construcción</span>
+                <span class="industry-tag">Salud Privada</span>
+                <span class="industry-tag">E-commerce de Alta Gama</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section id="contacto" class="cta-final">
+        <div class="container">
+            <h2>¿Listo para escalar su Revenue?</h2>
+            <p style="font-size: 1.25rem; margin-bottom: 2.5rem; opacity: 0.9;">Agende una sesión de diagnóstico de 30 minutos. Analizaremos su funnel y definiremos los pasos para su crecimiento predecible.</p>
+            <a href="mailto:tuemail@consultora.com" class="btn btn-primary" style="font-size: 1.2rem; padding: 1.2rem 3rem;">Agendar Mi Diagnóstico</a>
+            <p style="margin-top: 1.5rem; font-size: 0.9rem; opacity: 0.7;">*Solo para empresas facturando +$500K anuales con equipo comercial.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="logo">GROWTH<span>CORP</span></div>
+            <p style="margin-top: 1rem; color: var(--text-light);">&copy; 2025 Consultoría de Crecimiento & Performance. Todos los derechos reservados.</p>
+            <div class="social-links">
+                <a href="#"><i data-lucide="linkedin"></i></a>
+                <a href="#"><i data-lucide="twitter"></i></a>
+                <a href="#"><i data-lucide="mail"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Inicializar iconos
+        lucide.createIcons();
+
+        // Efecto suave al hacer scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
