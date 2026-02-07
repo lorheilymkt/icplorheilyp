@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultoría de Crecimiento & Adquisición | Sistemas de Revenue Predecibles</title>
+    <meta name="description" content="Especialistas en escalar empresas B2B y B2C mediante sistemas de adquisición integrando IA, marketing y ventas.">
+    
+    <!-- Fuentes: Inter para un look profesional -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons (CDN) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        :root {
+            --primary: #0f172a;    /* Deep Navy para elegancia */
+            --accent-pink: #e8aede; /* Lavanda/Rosa - Acento Premium */
+            --accent-cyan: #3bdbcd; /* Turquesa - Acción y Crecimiento */
+            --accent-cyan-hover: #2da89d;
+            --text-main: #1e293b;
+            --text-light: #64748b;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            line-height: 1.6;
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        /* Utilidades */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .section-padding {
+            padding: 100px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-cyan);
+            color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-cyan-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px -5px rgba(59, 219, 205, 0.4);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--accent-pink);
+            color: var(--primary);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: var(--accent-pink);
+            color: var(--primary);
+        }
+
+        h1, h2, h3 {
+            line-height: 1.1;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1.2rem;
+            letter-spacing: -1px;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+            font-size: 1.2rem;
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        /* Navbar */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(15px);
+            z-index: 1000;
+            padding: 1.2rem 0;
+            border-bottom: 1px solid rgba(15, 23, 42, 0.05);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .LORE_LOGO {
+            height: 45px;
+            width: auto;
+            display: block;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 200px 0 120px;
+            background: linear-gradient(135deg, #ffffff 0%, #fef2f2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Elemento decorativo Lavanda */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -10%;
+            right: -5%;
+            width: 40%;
+            height: 60%;
+            background: var(--accent-pink);
+            filter: blur(120px);
+            opacity: 0.15;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            max-width: 1000px;
+            margin: 0 auto 2rem;
+            background: linear-gradient(to right, var(--primary), #334155);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            color: var(--text-light);
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            font-weight: 400;
+        }
+
+        /* Problems Section */
+        .problems {
+            background-color: var(--bg-light);
+        }
+
+        .grid-problems {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .problem-card {
+            background: var(--white);
+            padding: 3rem 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            border-top: 4px solid transparent;
+        }
+
+        .problem-card:hover {
+            border-top-color: var(--accent-pink);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .problem-card i {
+            color: var(--accent-pink);
+            margin-bottom: 1.5rem;
+        }
+
+        .problem-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        /* Value Prop */
+        .value-prop {
+            background-color: var(--primary);
+            color: var(--white);
+            position: relative;
+        }
+
+        .value-prop h2 { color: var(--white); }
+
+        .flex-value {
+            display: flex;
+            align-items: center;
+            gap: 5rem;
+            flex-wrap: wrap;
+        }
+
+        .value-content { flex: 1.2; min-width: 300px; }
+        .value-image { 
+            flex: 0.8; 
+            min-width: 300px; 
+            background: linear-gradient(135deg, rgba(232, 174, 222, 0.1) 0%, rgba(59, 219, 205, 0.1) 100%);
+            padding: 3.5rem;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .check-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .check-item i {
+            color: var(--accent-cyan);
+            margin-top: 0.3rem;
+        }
+
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            padding: 3rem;
+            border: 1px solid #f1f5f9;
+            border-radius: 20px;
+            background: var(--white);
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            border-color: var(--accent-cyan);
+            background: #fdfaff; /* Sutil toque lavanda */
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: #ecfdff;
+            color: var(--accent-cyan);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        }
+
+        /* Methodology */
+        .methodology { background: var(--bg-light); }
+
+        .steps {
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .step {
+            flex: 1;
+            min-width: 240px;
+            text-align: center;
+            padding: 2rem;
+            background: var(--white);
+            border-radius: 16px;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: var(--accent-pink);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            font-weight: 800;
+            font-size: 1.2rem;
+        }
+
+        /* Industries */
+        .industries-tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.2rem;
+        }
+
+        .industry-tag {
+            padding: 1rem 2rem;
+            background: var(--white);
+            border-radius: 12px;
+            font-weight: 600;
+            color: var(--primary);
+            border: 2px solid var(--accent-pink);
+            transition: var(--transition);
+        }
+
+        .industry-tag:hover {
+            background: var(--accent-pink);
+            transform: scale(1.05);
+        }
+
+        /* Final CTA */
+        .cta-final {
+            background: linear-gradient(135deg, var(--primary) 0%, #1e1b4b 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 140px 0;
+            position: relative;
+        }
+
+        .cta-final h2 { color: var(--white); font-size: 3.5rem; margin-bottom: 2rem; }
+
+        /* Footer */
+        footer {
+            padding: 80px 0 40px;
+            background: #ffffff;
+            border-top: 1px solid #f1f5f9;
+            text-align: center;
+        }
+
+        .footer-logo-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .social-links {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-links a {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: var(--bg-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--accent-cyan);
+            color: var(--primary);
+            transform: rotate(15deg);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero h1 { font-size: 3rem; }
+            .section-title h2 { font-size: 2.2rem; }
+        }
+
+        @media (max-width: 768px) {
+            .hero { padding: 150px 0 80px; }
+            .hero h1 { font-size: 2.5rem; }
+            .flex-value { flex-direction: column-reverse; gap: 3rem; }
+            .steps { flex-direction: column; }
+            .btn { width: 100%; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="container nav-content">
+            <a href="#">
+                <img src="" alt="LORE_LOGO" class="LORE_LOGO">
+            </a>
+            <a href="#contacto" class="btn btn-primary" style="padding: 0.7rem 1.5rem; font-size: 0.85rem;">Agenda Diagnóstico</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container hero-content">
+            <h1>Sistemas de Adquisición Predecibles para Empresas en Escalamiento</h1>
+            <p>Integramos Estrategia, IA y Performance para diseñar la arquitectura de revenue de su compañía. Más allá del marketing operativo: Resultados reales.</p>
+            <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+                <a href="#contacto" class="btn btn-primary">Agenda Diagnóstico</a>
+                <a href="#servicios" class="btn btn-outline">Explorar Soluciones</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Problems Section -->
+    <section class="section-padding problems">
+        <div class="container">
+            <div class="section-title">
+                <h2>¿Su crecimiento depende de la suerte?</h2>
+                <p>Identificamos y resolvemos los cuellos de botella que impiden a las empresas B2B y B2C alcanzar su siguiente nivel de facturación.</p>
+            </div>
+            <div class="grid-problems">
+                <div class="problem-card">
+                    <i data-lucide="alert-triangle" size="40"></i>
+                    <h3>Pipeline Errático</h3>
+                    <p>Meses de alta facturación seguidos de "sequías" por falta de un sistema constante de generación de demanda.</p>
+                </div>
+                <div class="problem-card">
+                    <i data-lucide="user-x" size="40"></i>
+                    <h3>Leads Descalificados</h3>
+                    <p>Su equipo comercial pierde el 70% de su tiempo en prospectos que no tienen perfil de compra real.</p>
+                </div>
+                <div class="problem-card">
+                    <i data-lucide="trending-down" size="40"></i>
+                    <h3>CAC Creciente</h3>
+                    <p>El costo por cliente nuevo es cada vez mayor, reduciendo sus márgenes y limitando la reinversión.</p>
+                </div>
+                <div class="problem-card">
+                    <i data-lucide="database-zap" size="40"></i>
+                    <h3>Data Fragmentada</h3>
+                    <p>Decisiones basadas en intuición porque el marketing no está conectado correctamente con el CRM y el Revenue.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Prop Section -->
+    <section class="section-padding value-prop">
+        <div class="container">
+            <div class="flex-value">
+                <div class="value-content">
+                    <h2 style="margin-bottom: 2.5rem;">Arquitectura de Revenue impulsada por IA</h2>
+                    
+                    <div class="check-item">
+                        <i data-lucide="zap"></i>
+                        <div>
+                            <strong>Sistemas, no campañas</strong>
+                            <p style="color: #cbd5e1; font-size: 0.95rem;">No lanzamos anuncios aislados; construimos motores de adquisición automatizados que trabajan 24/7.</p>
+                        </div>
+                    </div>
+                    <div class="check-item">
+                        <i data-lucide="bot"></i>
+                        <div>
+                            <strong>Implementación de IA Generativa</strong>
+                            <p style="color: #cbd5e1; font-size: 0.95rem;">Utilizamos agentes de IA para calificar prospectos y personalizar la prospección a escala humana.</p>
+                        </div>
+                    </div>
+                    <div class="check-item">
+                        <i data-lucide="bar-chart-horizontal"></i>
+                        <div>
+                            <strong>Enfoque en Unit Economics</strong>
+                            <p style="color: #cbd5e1; font-size: 0.95rem;">Analizamos LTV y CAC para asegurar que cada dólar invertido genere un retorno exponencial.</p>
+                        </div>
+                    </div>
+                    <a href="#contacto" class="btn btn-primary" style="margin-top: 1rem;">Quiero un sistema así</a>
+                </div>
+                <div class="value-image">
+                    <div style="display: flex; flex-direction: column; gap: 40px; align-items: center;">
+                        <div>
+                            <span style="color: var(--accent-cyan); font-size: 3rem; font-weight: 800; display: block;">+55%</span>
+                            <span style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; opacity: 0.8;">Crecimiento de Pipeline</span>
+                        </div>
+                        <div style="width: 100%; height: 2px; background: rgba(255,255,255,0.1);"></div>
+                        <div>
+                            <span style="color: var(--accent-pink); font-size: 3rem; font-weight: 800; display: block;">-30%</span>
+                            <span style="text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; opacity: 0.8;">Optimización de CAC</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicios" class="section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Servicios de Consultoría de Alto Impacto</h2>
+                <p>Diseñamos la estrategia y le acompañamos en la implementación técnica y operativa.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i data-lucide="microscope"></i></div>
+                    <h3>Auditoría Estratégica</h3>
+                    <p>Identificamos fugas de dinero en su funnel actual y diseñamos el plan de ataque para los próximos 12 meses.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i data-lucide="workflow"></i></div>
+                    <h3>Diseño de Sistemas</h3>
+                    <p>Construcción de infraestructuras de adquisición predecibles combinando Inbound y Outbound inteligente.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i data-lucide="rocket"></i></div>
+                    <h3>Demand Generation</h3>
+                    <p>Estrategias de contenido y posicionamiento para que los leads lleguen a usted ya convencidos de su valor.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i data-lucide="brain-circuit"></i></div>
+                    <h3>IA & Automatización</h3>
+                    <p>Integración de agentes de IA y flujos automatizados para escalar la prospección sin aumentar la nómina.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Methodology Section -->
+    <section class="section-padding methodology">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestra Ruta al Éxito</h2>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">01</div>
+                    <h3>Diagnóstico</h3>
+                    <p>Análisis de data, CRM y procesos comerciales.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">02</div>
+                    <h3>Arquitectura</h3>
+                    <p>Diseño del sistema de adquisición a medida.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">03</div>
+                    <h3>Ejecución</h3>
+                    <p>Implementación técnica y entrenamiento de equipo.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">04</div>
+                    <h3>Escalamiento</h3>
+                    <p>Optimización basada en revenue y volumen.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries Section -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-title">
+                <h2>Expertos en Industrias de Alta Complejidad</h2>
+            </div>
+            <div class="industries-tags">
+                <span class="industry-tag">SaaS & Software B2B</span>
+                <span class="industry-tag">Agroindustria</span>
+                <span class="industry-tag">Distribución Masiva</span>
+                <span class="industry-tag">Constructoras e Inmobiliarias</span>
+                <span class="industry-tag">Salud & Clínicas Privadas</span>
+                <span class="industry-tag">E-commerce de Alto Ticket</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section id="contacto" class="cta-final">
+        <div class="container">
+            <h2>Transforme su Marketing en un Sistema de Revenue</h2>
+            <p style="font-size: 1.4rem; margin-bottom: 3rem; opacity: 0.9; max-width: 800px; margin-left: auto; margin-right: auto;">Si su empresa factura entre $500K y $20M y busca un sistema de adquisición escalable, hablemos.</p>
+            <a href="mailto:tuemail@consultora.com" class="btn btn-primary" style="padding: 1.5rem 4rem; font-size: 1.2rem;">Agendar Diagnóstico Sin Costo</a>
+            <div style="margin-top: 2.5rem; display: flex; justify-content: center; gap: 30px; font-size: 0.9rem; opacity: 0.8;">
+                <span><i data-lucide="check" size="16"></i> 30 min de Consultoría</span>
+                <span><i data-lucide="check" size="16"></i> Análisis de Funnel</span>
+                <span><i data-lucide="check" size="16"></i> Roadmap Inicial</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo-container">
+                <img src="" alt="LORE_LOGO" class="LORE_LOGO">
+            </div>
+            <p style="color: var(--text-light); max-width: 500px; margin: 0 auto 2rem;">Consultoría líder en diseño de sistemas de crecimiento para empresas con visión de escalamiento global.</p>
+            <div class="social-links">
+                <a href="#"><i data-lucide="linkedin"></i></a>
+                <a href="#"><i data-lucide="twitter"></i></a>
+                <a href="#"><i data-lucide="instagram"></i></a>
+            </div>
+            <p style="margin-top: 3rem; font-size: 0.85rem; color: #94a3b8;">&copy; 2025 Consultoría de Crecimiento. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Iniciar Iconos
+        lucide.createIcons();
+
+        // Scroll suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
